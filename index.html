@@ -42,7 +42,7 @@
         .label {
             display: inline-block;
             color: var(--primary-color);
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -51,7 +51,7 @@
 
         h1 {
             font-family: "Playfair Display", serif;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: 2rem;
             color: var(--secondary-color);
             text-transform: uppercase;
             line-height: 1;
@@ -68,7 +68,7 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin-bottom: 10px;
         }
@@ -89,8 +89,11 @@
         }
 
         .card-image {
-            height: 250px;
+            height: 180px;
+            width: 100%;
             background-color: var(--secondary-color);
+            background-position: center;
+            background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
         }
@@ -117,26 +120,17 @@
             font-size: 24px;
             color: var(--secondary-color);
             margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h2::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: #eee;
-            margin-left: 15px;
         }
 
         p {
-            font-size: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+            word-break: break-word;
             color: var(--text-muted);
             text-align: justify;
         }
 
-        .dessert-section {
+        .sobremesa-section {
             background: var(--secondary-color);
             color: white;
             padding: 80px 0;
@@ -144,11 +138,11 @@
             margin-top: 40px;
         }
 
-        .dessert-section h1 {
+        .sobremesa-section h1 {
             color: var(--primary-color);
         }
 
-        .dessert-card {
+        .sobremesa-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -160,29 +154,44 @@
             align-items: center;
         }
 
-        .dessert-img {
+        .sobremesa-img {
             height: 300px;
-            background: var(--primary-color);
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 16px;
         }
 
-        .dessert-info h2 {
+        .sobremesa-info h2 {
             color: white;
         }
 
-        .dessert-info p {
+        .sobremesa-info p {
             color: rgba(255, 255, 255, 0.8);
             font-size: 18px;
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .card-content {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 14px;
+            }
             .menu-grid {
                 grid-template-columns: 1fr;
             }
-            .dessert-card {
+            .sobremesa-card {
                 grid-template-columns: 1fr;
+                padding: 20px;
             }
-            .dessert-img {
+            .sobremesa-img {
                 height: 200px;
             }
         }
@@ -192,6 +201,29 @@
             padding: 40px;
             font-size: 14px;
             color: var(--text-muted);
+        }
+    
+    html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.card,
+.sobremesa-card {
+    width: 100%;
+    max-width: 100%;
+}
+    
+        .besa-section {
+            background: #400a0a;
+            color: white;
+            padding: 50px 5px;
+            border-radius: 40px 40px 20px 20px;
+            margin: 32px 10px 40px 10px;
+        }
+
+        .besa-section h1 {
+            color: var(--primary-color);
         }
     </style>
 </head>
@@ -205,7 +237,7 @@
 
         <div class="menu-grid">
             <article class="card">
-                <div class="card-image"></div>
+                <div class="card-image" style="background-image: url('https://era.al/wp-content/uploads/2022/11/BABON-1-28.jpg');"></div>
                 <div class="card-content">
                     <h2>Fërgesë</h2>
                     <p>Um dos pratos mais famosos da Albânia. Um guisado cremoso com pimentões, tomates, cebola, alho e queijo local, cozido lentamente até a perfeição. Servido quente com pão fresco.</p>
@@ -213,25 +245,58 @@
             </article>
 
             <article class="card">
-                <div class="card-image"></div>
+                <div class="card-image" style="background-image: url('https://era.al/wp-content/uploads/2022/11/BABON-1-28.jpg');"></div>
                 <div class="card-content">
-                    <h2>Trileçe</h2>
+                    <h2>Tavë Kosi</h2>
                     <p>O prato nacional albanês. Cordeiro assado coberto por uma mistura aveludada de iogurte, ovos e farinha, resultando em uma textura suave e sabor levemente ácido.</p>
                 </div>
             </article>
 
-            <article class="dessert-card">
-                <div class="dessert-img"></div>
-                <div class="dessert-info">
+            <article class="card">
+                <div class="card-image" style="background-image: url('https://era.al/wp-content/uploads/2022/11/BABON-1-28.jpg');"></div>
+                <div class="card-content">
                     <h2>Qifqi</h2>
-                    <p>Uma experiência cremosa inesquecível. Massa leve embebida em três tipos de leite (vaca, cabra e búfala), finalizada com uma cobertura artesanal de caramelo.</p>
+                    <p>Patrimônio Cultural da região de Gjirokastër. Bolinhas de arroz com ervas, grelhadas até ficarem crocantes por fora e macias por dentro. Uma entrada delicada e histórica.</p>
                 </div>
             </article>
         </div>
     </div>
 
+    <section class="sobremesa-section">
+        <div class="container">
+            <header>
+                <span class="label" style="color: white;">Para Finalizar</span>
+                <h1>Sobremesa</h1>
+            </header>
+            
+            <div class="sobremesa-card">
+                <div class="sobremesa-img" style="background-image: url('https://era.al/wp-content/uploads/2022/11/BABON-1-28.jpg');"></div>
+                <div class="sobremesa-info">
+                    <h2>Trileçe</h2>
+                    <p>Uma experiência cremosa inesquecível. Massa leve embebida em três tipos de leite (vaca, cabra e búfala), finalizada com uma cobertura artesanal de caramelo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <section class="besa-section">
+        <div class="container">
+            <header>
+                <span class="label" style="color: #73142b;">____________________</span>
+                <h1>Besa</h1>
+                 <span class="label" style="color: #73142b;">_________________</span>
+            </header>
+            
+            <div class="besa-card">
+                <div class="sobremesa-info">
+                    <p>Uma experiência cremosa inesquecível. Massa leve embebida em três tipos de leite (vaca, cabra e búfala), finalizada com uma cobertura artesanal de caramelo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <footer>
-        <p>&copy; Site feito por: Lele</p>
+        <p>&copy; 2026 Gastronomia Albanesa - Experiência Autêntica</p>
     </footer>
 </body>
 </html>
